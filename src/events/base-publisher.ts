@@ -20,7 +20,7 @@ export abstract class Publisher<T extends Event> {
       this.client.publish(this.subject, JSON.stringify(data), (err) => {
         if (err) return rej(err);
 
-        console.log("Event Published: ", data);
+        console.log("Event Published: %s: %j", this.subject, data);
         res();
       });
     });
